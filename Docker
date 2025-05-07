@@ -1,7 +1,7 @@
 docker build . -t django-app
 docker run -d -p 5000:5000 django-app
 
-ocker volume create --name django-app-volume --opt type=none --opt device=/home/shadab/SHADAB/docker_p/django-app-volume --opt o=bind
+docker volume create --name django-app-volume --opt type=none --opt device=/home/shadab/SHADAB/docker_p/django-app-volume --opt o=bind
 
 ocker run -d  --mount source=django-app-volume,target=/data -p 5000:5000 django-app:latest
 
